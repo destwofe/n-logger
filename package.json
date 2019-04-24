@@ -1,0 +1,27 @@
+{
+  "name": "@destwofe/n-logger",
+  "version": "1.0.2",
+  "description": "customize logger with 3 level and write to file saparated error file and saparated day",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destwofe/n-logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "destwofe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/destwofe/n-logger/issues"
+  },
+  "homepage": "https://github.com/destwofe/n-logger#readme",
+  "dependencies": {
+    "@destwofe/n-utils": "^1.0.0",
+    "chalk": "^2.4.2",
+    "moment": "^2.24.0"
+  }
+}
