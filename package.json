@@ -1,6 +1,6 @@
 {
   "name": "@destwofe/n-logger",
-  "version": "1.0.2",
+  "version": "1.2.4",
   "description": "customize logger with 3 level and write to file saparated error file and saparated day",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/destwofe/n-logger#readme",
   "dependencies": {
-    "@destwofe/n-utils": "^1.0.0",
+    "@destwofe/n-utils": "^1.2.4",
     "chalk": "^2.4.2",
     "moment": "^2.24.0"
   }

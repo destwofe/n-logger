@@ -1,7 +1,7 @@
 const FS = require('fs');
 const Chalk = require('chalk');
 const Moment = require('moment');
-const { objectify } = require('@destwofe/n-utils')
+const { objectify } = require('@destwofe/n-utils');
 
 const logDir = `logs`;
 
@@ -12,7 +12,7 @@ if (!FS.existsSync(logDir)) FS.mkdirSync(logDir);
  * @param {String} className class name or file name for log
  * @param {Number} showLevel set minimum show level { error: 0, info: 1, debug: 2 }
  */
-const loggerBuilder = (className, showLevel = process.env.LOGSHOWLEVEL || 2) => {
+const loggerBuilder = (className, showLevel = 2) => {
   const levels = { debug: 'debug', info: 'info', error: 'error' };
 
   const logMessageFactory = logData => {
@@ -20,8 +20,8 @@ const loggerBuilder = (className, showLevel = process.env.LOGSHOWLEVEL || 2) => 
       levels[logData.level] === levels.debug
         ? Chalk.green('debug')
         : levels[logData.level] === levels.error
-        ? Chalk.red('error')
-        : Chalk.blue('info ');
+          ? Chalk.red('error')
+          : Chalk.blue('info ');
     // add level
     let logMessage = `${level}`;
     // add time stamp
