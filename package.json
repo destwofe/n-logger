@@ -1,10 +1,12 @@
 {
   "name": "@destwofe/n-logger",
-  "version": "1.2.4",
+  "version": "2.0.0",
   "description": "customize logger with 3 level and write to file saparated error file and saparated day",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "tsc",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,25 @@
   },
   "homepage": "https://github.com/destwofe/n-logger#readme",
   "dependencies": {
-    "@destwofe/n-utils": "^1.2.4",
+    "@destwofe/n-utils": "^2.0.4",
+    "@types/cron": "^1.7.2",
+    "archiver": "^5.2.0",
     "chalk": "^2.4.2",
+    "cron": "^1.8.2",
     "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.1.0",
+    "@types/lodash.chunk": "^4.2.6",
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "axios": "^0.21.1",
+    "eslint": "^7.19.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
   }
 }
