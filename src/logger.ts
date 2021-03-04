@@ -48,7 +48,7 @@ export const LoggerFactory = (className: string) => {
     // add message
     logMessage = `${logMessage} | ${logData.message}`;
     // add meta
-    if (logData.message.length > 0) logMessage = `${logMessage} |`;
+    if (logData.meta.length > 0) logMessage = `${logMessage} |`;
     return logMessage;
   };
 
@@ -70,22 +70,28 @@ export const LoggerFactory = (className: string) => {
 
   const debug = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.debug, message, meta);
-    if (config.showLevel >= LogLevel.DEBUG) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.DEBUG) consoleOut(logMessage, meta)
     writeToFile(logData);
   };
 
   const info = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.info, message, meta);
-    if (config.showLevel >= LogLevel.INFO) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.INFO) consoleOut(logMessage, meta)
     writeToFile(logData);
   };
 
   const error = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.error, message, meta);
-    if (config.showLevel >= LogLevel.ERROR) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.ERROR) consoleOut(logMessage, meta)
     writeToFile(logData);
     writeToFile(logData, getErrorLogFilePath());
   };
+
+  const consoleOut = (logMessage: string, meta: any[]) => {
+    if (meta.length === 0) console.log(logMessage);
+    else if (meta.length === 1) console.log(logMessage, meta[0]);
+    else console.log(logMessage, meta);
+  }
 
   return {
     levels,
