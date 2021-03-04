@@ -2,3 +2,5 @@ src
 tsconfig.json
 test.js
 test.ts
+logs
+node_modules

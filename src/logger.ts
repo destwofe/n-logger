@@ -70,19 +70,19 @@ export const LoggerFactory = (className: string) => {
 
   const debug = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.debug, message, meta);
-    if (config.showLevel <= LogLevel.DEBUG) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.DEBUG) console.log(logMessage, meta);
     writeToFile(logData);
   };
 
   const info = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.info, message, meta);
-    if (config.showLevel <= LogLevel.INFO) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.INFO) console.log(logMessage, meta);
     writeToFile(logData);
   };
 
   const error = (message = '', ...meta: any[]) => {
     const { logMessage, logData } = logDataFactory(levels.error, message, meta);
-    if (config.showLevel <= LogLevel.ERROR) console.log(logMessage, meta);
+    if (config.showLevel >= LogLevel.ERROR) console.log(logMessage, meta);
     writeToFile(logData);
     writeToFile(logData, getErrorLogFilePath());
   };
